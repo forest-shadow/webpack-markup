@@ -1,0 +1,69 @@
+@import "_variables.styl";
+
+/**
+ * This file contains some default styles for elements
+ * which are not categorized yet into some separate file,
+ * or don't deserve separate file for some reason (e.g. too few styles)
+ */
+
+input, button, textarea {
+  transition: border $base-transition-duration $base-transition-function, color $base-transition-duration, background $base-transition-duration;
+}
+
+/* fix gray color on Android Chrome */
+input[type=date] {
+  background-color: #fff;
+}
+
+// disable number & time arrows
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button,
+input[type=time]::-webkit-outer-spin-button,
+input[type=time]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+//Supports Mozilla
+input[type=number] {
+  -moz-appearance:textfield;
+}
+
+// disable ie default eye icon
+input[type=password]::-ms-reveal,
+input[type=password]::-ms-clear {
+  display: none;
+}
+
+button {
+  background: $transparent;
+
+  &[disabled] {
+    opacity: .65;
+  }
+}
+
+pre,
+code,
+kbd,
+samp {
+  margin: 10px 0;
+  background-color: $anti-flash;
+  overflow: auto;
+  color: $pure-black;
+}
+
+pre.code {
+  white-space: pre-line;
+}
+
+textarea {
+  border-radius: 5px;
+  font-size: 1.5rem;
+  color: $jet;
+  padding: 10px 15px;
+  border: 1px solid $airborne-dust;
+
+  &:hover {
+    border: 1px solid $pastel-grey;
+  }
+}

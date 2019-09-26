@@ -1,0 +1,192 @@
+@import "utils/_variables.styl";
+
+*, :after, :before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: $transparent;
+}
+
+
+/* ===== Document ===== */
+
+/**
+ * Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: $platinum-grey;
+}
+
+
+/* ===== Text-level semantics ===== */
+
+/**
+ * Remove the gray background on active links in IE 10.
+ * Remove outline
+ */
+a {
+  background-color: transparent;
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+
+/* ===== Embedded content ===== */
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none;
+}
+
+
+/* ===== Forms ===== */
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove specific webkit styles
+ * 3. Disable outline
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  -webkit-appearance: none; /* 2 */
+
+  &, /* 3 */
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+/**
+ * 1. Show the overflow in IE, Edge.
+ * 2. Remove default border
+ */
+button,
+input {
+  overflow: visible; /* 1 */
+  border: none;
+}
+
+/**
+ * 1. Remove cross icon from IE
+ */
+input {
+  &::-ms-clear { /* 1 */
+    display: none;
+  }
+
+  &::placeholder {
+    opacity: 1;
+    color: $spanish-grey;
+    font-weight: 400;
+  }
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Enforce defaults
+ */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; /* 1 */
+  cursor: pointer; /* 2 */
+  user-select: none;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+* Show correct cursor for disabled things
+*/
+[disabled] {
+  cursor: not-allowed;
+}
+
+
+/* ===== Misc ===== */
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none;
+}
+
+/**
+ * Restore default margins for hr after global reset of margins
+ */
+hr {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+/**
+ * Restore default padding for lists after global reset of padding
+ */
+ul, ol, dl {
+  padding-left: 40px;
+}

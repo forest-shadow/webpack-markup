@@ -1,0 +1,41 @@
+/*
+ * Checks for a valid CSS length.
+ *
+ * @argument {string} value
+ * @return {boolean}
+ *
+ * @access private
+ */
+_is-length(value) {
+  return typeof(value) != "null" and ( (typeof(value) == 'literal' and slice(value, 0, 4) == "calc") or index(auto inherit initial 0, value) or ( typeof(value) == "unit" and unit(value)!="" ) )
+}
+
+/*
+* Transforms shorthand that can range from 1-to-4 values to be 4 values.
+*
+* @argument {list} shorthand
+* @return {list}
+*
+* @example stylus
+*   .element {
+*     margin: _unpack-shorthand(1em 2em);
+*   }
+*
+* // CSS Output
+*   .element {
+*     margin: 1em 2em 1em 2em;
+*   }
+*
+* @access private
+*/
+_unpack-shorthand(shorthand) {
+  if (length(shorthand) == 1) {
+    return (shorthand[0] shorthand[0] shorthand[0] shorthand[0])
+  } else if (length(shorthand) == 2) {
+    return (shorthand[0] shorthand[1] shorthand[0] shorthand[1])
+  } else if (length(shorthand) == 3) {
+    return (shorthand[0] shorthand[1] shorthand[2] shorthand[1])
+  } else {
+    return shorthand
+  }
+}
