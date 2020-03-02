@@ -1,0 +1,76 @@
+//doctype
+html(lang="ru").no-js
+  head
+    title Start Page | Gulp + Jade + Stylus Scaffold
+    meta(http-equiv="Content-Type", content="text/html; charset=utf-8")
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='A description of this page')
+    link(rel="icon" type="image/png", href="./images/vendor/favicon.png")
+    link(rel='stylesheet', type='text/css', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css')
+    link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/css?family=Open+Sans:700&subset=cyrillic,cyrillic-ext')
+    link(rel='stylesheet', type='text/css', href='./assets/css/app.css')
+    script(src='https://code.jquery.com/jquery-1.11.3.min.js', type='text/javascript')
+    | <!--[if lt IE 9]>script(src="./scripts/html5shiv.min.js")<![endif]-->
+
+body
+  .container
+    h2.text-center Start page
+    h3.text-center Webpack + Pug + Stylus
+
+    table.table.table-bordered
+      tr
+        th(width="30%") Link
+        th Page name
+      //if locals.pages
+      //  each page in locals.pages
+      //    tr
+      //      td
+      //        a(href=page.file + ".html", target="_blank") #{page.file}.html
+      //      td #{page.name}
+
+    footer.footer.navbar-fixed-bottom
+      svg.
+        <svg id="trident" data-name="Trident with filled oval copy" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 744.43 1022.09"><defs><style>.cls-1{fill:none;stroke:#000;stroke-linecap:square;stroke-linejoin:bevel;}</style></defs><title>Tridente-vidya</title><path d="M731.84,763.47h-236c-2.67-20.33-21.67-53.67-21.67-53.67l180.67-.67s15.67,1.67,22.33-30.33-21.33-43.33-21.33-43.33l-225.67-1,10-71.33,84,8.67-11.33-13c6.67-1,64,2,112.33-41s49.22-87.33,48.67-114.67c-.58-29-19-72-24.95-80.72-16.1-27.87-72.76-77.21-80.05-84.28-7.54-7.31-21.92-27.62-21.92-27.62-12.17-18.5-26.92-39.21-18.08-85,2.34-12.16,11.15-28.43,35-28.08,11.38.17,28.17,14.92,33,24.58,1,2,5.88,12.79,7.08,15.21,2.22,4.44,12.58,7,8.54-6-5.74-18.55-13-30-16.33-34.67s-20.87-24.83-47.33-22c-18.12,1.94-29.41,8.76-39.07,20.76s-16.59,26.91-14.93,59.24,16.58,60.92,16.58,60.92,23.75,43.25,37.75,71.75,20.25,67.25,20.25,67.25,10,66.5-13.5,110-67,45.5-67,45.5-54.25,6.25-67.25-42.5c-7-46.5,22.25-62.25,22.25-62.25L383.17,18.88l-.17-.13L322.25,405s29.25,15.75,22.25,62.25c-13,48.75-67.25,42.5-67.25,42.5s-43.5-2-67-45.5-13.5-110-13.5-110S203,315.5,217,287s37.75-71.75,37.75-71.75,14.92-28.58,16.58-60.92-5.26-47.24-14.93-59.24-21-18.82-39.07-20.76c-26.46-2.83-44.08,17.46-47.33,22S159.41,112.45,153.67,131c-4,13,6.32,10.49,8.54,6,1.21-2.42,6.1-13.24,7.08-15.21,4.83-9.67,21.63-24.42,33-24.58,23.89-.35,32.7,15.92,35,28.08,8.83,45.83-5.92,66.54-18.08,85,0,0-14.37,20.31-21.92,27.63-7.29,7.07-63.95,56.41-80.05,84.28C111.38,331,92.92,374,92.33,403c-.55,27.34.33,71.67,48.67,114.67s105.67,40,112.33,41l-11.33,13L326,563l10,71.33-225.67,1s-28,11.33-21.33,43.33S111.33,709,111.33,709l180.67.67S273,743,270.33,763.33h-236s-26,11-22.67,39.33,20,34.33,20,34.33l238,1.33s12.33,46.67,22,53L112,892s-27,9-24,37,15.33,37.67,21.67,37.67l224,.33.33,47.67s4.15,24.29,45.68,25.12l-1.18,0c49,2.33,53.67-25,53.67-25l.33-47.67,224-.33c6.33,0,18.67-9.67,21.67-37.67s-24-37-24-37l-179.67-.67c9.67-6.33,22-53,22-53l238-1.33s16.67-6,20-34.33S731.84,763.47,731.84,763.47ZM383.25,871C352.18,871,327,839.77,327,801.25s25.18-69.75,56.25-69.75,56.25,31.23,56.25,69.75S414.32,871,383.25,871Z" transform="translate(-10.87 -18.36)"/></svg>
+    style.
+      body {
+        background: #46aad9;
+        color: #fff;
+      }
+
+      h3 {
+        margin-bottom: 30px;
+      }
+
+      a {
+        color: #c6f1f8;
+        font-weight: bold;
+        transition: all .1s;
+      }
+
+      a:hover {
+        color: #93d2de;
+        text-decoration: none;
+      }
+
+      .footer.navbar-fixed-bottom {
+        height: 230px;
+        padding-bottom: 20px;
+      }
+
+      .footer.navbar-fixed-bottom svg {
+        display: block;
+        margin: 0 auto;
+      }
+
+      .footer.navbar-fixed-bottom svg path {
+        fill: #23556c;
+        stroke: none;
+        transition: all .2s ease-in;
+      }
+
+      .footer.navbar-fixed-bottom svg:hover path {
+        fill: #2a6682;
+        stroke: none;
+      }
