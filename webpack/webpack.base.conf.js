@@ -15,6 +15,24 @@ const PAGES = fs
   .readdirSync(PAGES_DIR)
   .filter(fileName => fileName.endsWith('.pug'));
 
+const getPageFilename = templateFilename =>
+  templateFilename.replace(new RegExp('.pug'), '');
+const getPageName = pageFilename =>
+  pageFilename
+    .split('-')
+    .map(nameChunk => nameChunk.charAt(0).toUpperCase() + nameChunk.substr(1))
+    .join(' ');
+const PAGE_ITEMS = PAGES.reduce((acc, page) => {
+  const pageFilename = getPageFilename(page);
+  if(pageFilename !== 'index') {
+    acc.push({
+      fileName: pageFilename,
+      name: getPageName(pageFilename)
+    });
+  }
+  return acc
+}, []);
+
 module.exports = {
   externals: {
     paths: PATHS
@@ -119,7 +137,10 @@ module.exports = {
           },
           {
             loader: 'postcss-loader',
-            options: { sourceMap: true, config: { path: `./postcss.config.js` } }
+            options: {
+              sourceMap: true,
+              config: { path: `./postcss.config.js` }
+            }
           }
         ]
       }
@@ -140,14 +161,13 @@ module.exports = {
       { from: `${PATHS.src}/static`, to: '' }
     ]),
 
-    // Automatic creation any html pages (Don't forget to RERUN dev server)
-    // see more: https://github.com/vedees/webpack-template/blob/master/README.md#create-another-html-files
-    // best way to create pages: https://github.com/vedees/webpack-template/blob/master/README.md#third-method-best
+    // Automatically create `html` from `pug`
     ...PAGES.map(
       page =>
         new HtmlWebpackPlugin({
           template: `${PAGES_DIR}/${page}`,
-          filename: `./${page.replace(/\.pug/, '.html')}`
+          filename: `./${page.replace(/\.pug/, '.html')}`,
+          pages: PAGE_ITEMS
         })
     )
   ]

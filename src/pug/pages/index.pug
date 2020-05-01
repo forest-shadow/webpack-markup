@@ -6,13 +6,11 @@ html(lang="ru").no-js
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     meta(name='description', content='A description of this page')
-    link(rel="icon" type="image/png", href="./images/vendor/favicon.png")
+    link(rel="icon" type="image/png", href="./assets/img/favicon.png")
     link(rel='stylesheet', type='text/css', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
     link(rel='stylesheet', type='text/css', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css')
     link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/css?family=Open+Sans:700&subset=cyrillic,cyrillic-ext')
     link(rel='stylesheet', type='text/css', href='./assets/css/app.css')
-    script(src='https://code.jquery.com/jquery-1.11.3.min.js', type='text/javascript')
-    | <!--[if lt IE 9]>script(src="./scripts/html5shiv.min.js")<![endif]-->
 
 body
   .container
@@ -23,12 +21,12 @@ body
       tr
         th(width="30%") Link
         th Page name
-      //if locals.pages
-      //  each page in locals.pages
-      //    tr
-      //      td
-      //        a(href=page.file + ".html", target="_blank") #{page.file}.html
-      //      td #{page.name}
+      if htmlWebpackPlugin.options.pages.length
+        each page in htmlWebpackPlugin.options.pages
+          tr
+            td
+              a(href=page.fileName + ".html", target="_blank") #{page.fileName}.html
+            td #{page.name}
 
     footer.footer.navbar-fixed-bottom
       svg.
