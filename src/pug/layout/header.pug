@@ -1,0 +1,30 @@
+include ../mixins/index
+
+- let navItems = ['Home', 'About', 'Portfolio', 'Blog', 'Contacts']
+-
+  let socialIcons = [
+    {iconName: 'vk', link: '#'},
+    {iconName: 'tweet', link: '#'},
+    {iconName: 'insta', link: '#'},
+    {iconName: 'fb', link: '#'},
+  ]
+
+mixin contactInfoString(iconName, info)
+    .contact-info-string
+        i(class=iconName)
+        span= info
+
+header.header
+    .wrapper
+        .header__logo-wrapper
+            a.header__logo(href="#")
+                img(src="")
+        .header__nav-wrapper
+            +simpleNav(navItems)
+            .search__container
+                .search
+                    input(name="search")
+        .header__contacts-wrapper
+            +contactInfoString('phone', '+ 7 (777) 77 77')
+            +contactInfoString('email', 'god@shanti.com')
+            +socialIcons(socialIcons)

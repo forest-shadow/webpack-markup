@@ -1,0 +1,16 @@
+mixin simpleNav(items = [], cnt = 'nav')
+    div(class=cnt)
+        if(items.length)
+            each item in items
+                a(class=`${cnt}__item`, href="#")= item
+
+mixin socialIcons(items = [], cnt = 'social-icons')
+    div(class=cnt)
+        if(items.length)
+            each item in items
+                a(class=`${cnt}__item`, href=item.link)
+                    i(class=item.iconName)
+
+mixin navListItem(name)
+    li
+        a( href="#" )= name
