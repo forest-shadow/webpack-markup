@@ -1,0 +1,11 @@
+extends ../layout/doc-layout
+
+append config
+    - var pageTitle         = "Main"
+    - var metaDesc          = "Meta Description for current page"
+    - var jQuery            = true
+    - var resultBodyClasses = bodyClasses
+    - var thisPage          = "Page Subheader"
+    - var pageTitle         = pageTitle.concat(' | ' + thisPage)
+
+block content

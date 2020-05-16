@@ -1,0 +1,22 @@
+include config
+
+doctype
+html(lang="ru").no-js
+    head
+        title
+            block title
+                | #{pageTitle}
+        meta(http-equiv="Content-Type", content="text/html; charset=utf-8")
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        meta(name='description', content=metaDesc)
+        link(rel="icon", href="images/favicon.png")
+        link(rel='stylesheet', type='text/css', href='./all.css')
+        link(rel='stylesheet', type='text/css', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css')
+        script(src='https://code.jquery.com/jquery-1.11.3.min.js', type='text/javascript')
+        | <!--[if lt IE 9]>script(src="./scripts/html5shiv.min.js")<![endif]-->
+    body(class=resultBodyClasses.join(' '))
+        include modals
+        include header
+        block content
+        include footer
