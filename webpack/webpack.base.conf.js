@@ -43,7 +43,7 @@ module.exports = {
   output: {
     filename: `${PATHS.assets}js/[name].[hash].js`,
     path: PATHS.dist,
-    publicPath: './'
+    publicPath: '/'
   },
   optimization: {
     splitChunks: {
@@ -111,7 +111,10 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
-            options: { sourceMap: true }
+            options: {
+              sourceMap: true,
+              importLoaders: 2
+            }
           },
           {
             loader: 'postcss-loader',
@@ -122,7 +125,10 @@ module.exports = {
           },
           {
             loader: 'stylus-loader',
-            options: { sourceMap: true }
+            options: {
+              sourceMap: true,
+              preferPathResolver: 'webpack'
+            }
           }
         ]
       },
@@ -156,8 +162,8 @@ module.exports = {
       filename: `${PATHS.assets}css/[name].[hash].css`
     }),
     new CopyWebpackPlugin([
-      { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
-      { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
+      { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },
+      { from: `${PATHS.src}/fonts`, to: `${PATHS.assets}fonts` },
       { from: `${PATHS.src}/static`, to: '' }
     ]),
 
@@ -166,7 +172,7 @@ module.exports = {
       page =>
         new HtmlWebpackPlugin({
           template: `${PAGES_DIR}/${page}`,
-          filename: `./${page.replace(/\.pug/, '.html')}`,
+          filename: `${page.replace(/\.pug/, '.html')}`,
           pages: PAGE_ITEMS
         })
     )
