@@ -1,3 +1,63 @@
-header.header {
-  background-color: $block-bg;
+.header {
+  display: flex;
+  padding: 40px 0;
+  color: white;
+
+  &__wrapper {
+    background-color: $block-bg;
+  }
+
+  &__logo-wrapper {
+    width: 25%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__nav-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    margin: 0 2.5%;
+
+    .nav {
+      display: flex;
+
+      &__item {
+        padding: 15px 20px;
+        color: white;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        &:hover {
+          background-color: $perolus;
+        }
+      }
+    }
+
+    .search {
+      &__container {
+        width: 100%;
+      }
+
+      input {
+        width: calc(100% - 40px);
+        border-radius: 12px;
+        padding: 18px 20px;
+        background-color: $boston-blue;
+        color: white;
+
+        &::placeholder {
+          color: white;
+        }
+      }
+    }
+  }
+
+  &__contacts-wrapper {
+    wodth: 20%
+  }
+
 }
