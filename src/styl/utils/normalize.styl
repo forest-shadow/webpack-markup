@@ -1,6 +1,4 @@
-@import "utils/_variables.styl";
-
-*, :after, :before {
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -42,8 +40,8 @@ pre,
 code,
 kbd,
 samp {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+  font-family: monospace, monospace; // (1)
+  font-size: 1em; // (2)
 }
 
 /**
@@ -89,9 +87,9 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit; /* 1 */
-  font-size: 100%; /* 1 */
-  -webkit-appearance: none; /* 2 */
+  font-family: inherit; // (1)
+  font-size: 100%; // (1)
+  -webkit-appearance: none; // (2)
 
   &, /* 3 */
   &:hover,
@@ -107,7 +105,7 @@ textarea {
  */
 button,
 input {
-  overflow: visible; /* 1 */
+  overflow: visible;
   border: none;
 }
 
@@ -115,7 +113,7 @@ input {
  * 1. Remove cross icon from IE
  */
 input {
-  &::-ms-clear { /* 1 */
+  &::-ms-clear { // (1)
     display: none;
   }
 
@@ -143,8 +141,8 @@ button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
-  -webkit-appearance: button; /* 1 */
-  cursor: pointer; /* 2 */
+  -webkit-appearance: button; // (1)
+  cursor: pointer; // (2)
   user-select: none;
 }
 
