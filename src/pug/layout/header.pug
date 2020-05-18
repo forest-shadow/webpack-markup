@@ -4,7 +4,7 @@ include ../mixins/index
 -
   let socialIcons = [
     {iconName: 'vk', link: '#'},
-    {iconName: 'tweet', link: '#'},
+    {iconName: 'twitter', link: '#'},
     {iconName: 'insta', link: '#'},
     {iconName: 'fb', link: '#'},
   ]
@@ -27,5 +27,5 @@ mixin contactInfoString(iconName, info)
                         input(name="search", placeholder="Search")
             .header__contacts-wrapper
                 +contactInfoString('phone', '+ 7 (777) 77 77')
-                +contactInfoString('email', 'god@shanti.com')
+                +contactInfoString('mail', 'god@shanti.com')
                 +socialIcons(socialIcons)
