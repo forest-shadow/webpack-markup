@@ -3,6 +3,7 @@ const fs = require('fs');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const IconFontPlugin = require('icon-font-loader').Plugin;
 
 const PATHS = {
   src: path.join(__dirname, '../src'),
@@ -43,7 +44,7 @@ module.exports = {
   output: {
     filename: `${PATHS.assets}js/[name].[hash].js`,
     path: PATHS.dist,
-    publicPath: './'
+    publicPath: '/'
   },
   optimization: {
     splitChunks: {
@@ -126,6 +127,7 @@ module.exports = {
               config: { path: `./postcss.config.js` }
             }
           },
+          'icon-font-loader',
           {
             loader: 'stylus-loader',
             options: {
@@ -150,7 +152,8 @@ module.exports = {
               sourceMap: true,
               config: { path: `./postcss.config.js` }
             }
-          }
+          },
+          'icon-font-loader'
         ]
       }
     ]
@@ -161,6 +164,10 @@ module.exports = {
     }
   },
   plugins: [
+    new IconFontPlugin({
+      output: `${PATHS.assets}fonts/IconFont`,
+      publicPath: `../../${PATHS.assets}fonts/IconFont`
+    }),
     new MiniCssExtractPlugin({
       filename: `${PATHS.assets}css/[name].[hash].css`
     }),
