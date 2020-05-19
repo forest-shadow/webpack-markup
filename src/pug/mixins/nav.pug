@@ -1,8 +1,12 @@
 mixin simpleNav(items = [], cnt = 'nav')
     div(class=cnt)
-        if(items.length)
-            each item in items
-                a(class=`${cnt}__item`, href="#")= item
+        - if(items.length)
+            each item, index in items
+                if(index === 0)
+                    - var activeClass = ` ${cnt}__item--active`
+                else
+                    - var activeClass = ''
+                a(class=`${cnt}__item${activeClass}`, href="#")= item
 
 mixin socialIcons(items = [], cnt = 'social-icons')
     div(class=cnt)

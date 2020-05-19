@@ -1,0 +1,34 @@
+include ../mixins/index
+
+mixin infoBlockString(labelName, info)
+    .info-block-string
+        span.info-block-string__label= labelName
+        span.info-block-string__info= info
+
+.footer__wrapper
+    .wrapper
+        footer.footer
+            .footer__nav-wrapper
+                +simpleNav(navItems)
+            .footer__info-section
+                .footer__logo-wrapper
+                    a.footer__logo(href="#")
+                        img(src="assets/img/site-logo.png")
+                .info-block
+                    .info-block__header
+                        span Our contacts
+                    .info-block__content
+                        +infoBlockString('Phone:', '+ 7 (777) 77 77')
+                        +infoBlockString('Email:', 'god@shanti.com')
+                        +infoBlockString('Address:', 'India, Varanasi')
+                .info-block
+                    .info-block__header
+                        span Socials
+                    .info-block__content
+                        +socialIcons(socialIcons)
+
+                .footer__copyrights
+                    .copyrights__items
+                        span © all rights reserved
+                        span 2016 - 2017
+                    span.copyrights__designed-by designed by <a href="#">forest-shadow</a>

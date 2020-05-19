@@ -14,5 +14,6 @@ html(lang="ru").no-js
     body(class=resultBodyClasses.join(' '))
         include modals
         include header
-        block content
+        .content-wrapper
+            block content
         include footer
